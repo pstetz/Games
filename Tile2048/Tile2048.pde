@@ -1,28 +1,30 @@
-Tile start;
+Board board;
 boolean gameOn;
+
 void setup(){
   size(800, 800);
-  start = new Tile(0, 0);
+  board = new Board();
+  board.setup();
 }
 
 void draw() {
   background(240);
-  start.show();
+  board.show();
 }
 
 void keyPressed() {
   switch(keyCode) {
-    case 37:
-       print("Left\n");
-       break;
-    case 38:
-       print("up\n");
-       break;
-    case 39:
-       print("Right\n");
-       break;
-    case 40:
-       print("Down\n");
-       break;
+    case 37: // Left
+      //board.tilt(-1, 0);
+      break;
+    case 38: // Up
+      board.tiltUp();
+      break;
+    case 39: // Right
+      //board.tilt(1, 0);
+      break;
+    case 40: // Down
+      //board.tilt(0, -1);
+      break;
   }
 }
