@@ -5,7 +5,9 @@ class Board {
   Tile[][] grid = new Tile[row_num][col_num];
   
   void setup(){
-    addTile(0, 0);
+    addTile(3, 3);
+    addTile(1, 1);
+    addTile(2, 2);
   }
   
   void show() {
@@ -29,13 +31,25 @@ class Board {
     size -= 1;
   }
   
-  void tiltUp(){
-    for (int i=1; i < row_num; i++) {
-      for (int j=0; j < col_num; j++) {
-        // Check if grid has tile in (i-1, j)
+  void tilt(int row_start, int row_end, int row_offset,
+              int col_start, int col_end, int col_offset){
+    for (int i=row_start; i < row_num+row_end; i++) {
+      for (int j=col_start; j < col_num+col_end; j++) {
+        if(grid[i][j] != null){
+          Tile temp = grid[i][j];
+          grid[i][j] = null;
+          
+          i = i + row_offset;
+          j = j + col_offset;
+          grid[i][j] = temp;
+          grid[i][j].updatePos(i, j);
+          grid[i][j].show();
+        }
       }
     }
   }
+  
+  
   
   //void tiltHorizontal(int x_dir){
     

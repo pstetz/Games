@@ -21,4 +21,9 @@ class Tile {
     textAlign(CENTER, CENTER);
     text(value, pixelPos.x+100, pixelPos.y+100);
   }
+  
+  void updatePos(int x, int y) {
+    position = new PVector(x, y);
+    pixelPos = new PVector(200*x, 200*y);
+  }
 }

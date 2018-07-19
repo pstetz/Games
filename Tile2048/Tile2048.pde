@@ -15,16 +15,20 @@ void draw() {
 void keyPressed() {
   switch(keyCode) {
     case 37: // Left
-      //board.tilt(-1, 0);
+      board.tilt(1, 0, -1,
+                 0, 0, 0);
       break;
     case 38: // Up
-      board.tiltUp();
+      board.tilt(0, 0, 0,
+                 1, 0, -1);
       break;
     case 39: // Right
-      //board.tilt(1, 0);
+      board.tilt(0, -1, 1,
+                 0, 0, 0);
       break;
     case 40: // Down
-      //board.tilt(0, -1);
+      board.tilt(0, 0, 0,
+                 0, -1, 1);
       break;
   }
 }
