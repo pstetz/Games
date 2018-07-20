@@ -20,6 +20,21 @@ class Board {
     }
   }
   
+  void addRandTile() {
+    int row_i = 0;
+    int col_i = 0;
+    
+    for(int i=0; i < row_num; i++) {
+      for(int j=0; j < col_num; j++) {
+        if(grid[i][j] == null) {
+          row_i = i;
+          col_i = j;
+        }
+      }
+    }
+    addTile(row_i, col_i);
+  }
+  
   void addTile(int row_i, int col_i){
     Tile tile = new Tile(row_i, col_i);
     grid[row_i][col_i] = tile;
@@ -41,9 +56,13 @@ class Board {
           
           i = i + row_offset;
           j = j + col_offset;
-          grid[i][j] = temp;
-          grid[i][j].updatePos(i, j);
-          grid[i][j].show();
+          if(grid[i][j] != null && grid[i][j].value == temp.value) {
+            grid[i][j].value *= 2;
+          } else {
+            grid[i][j] = temp;
+            grid[i][j].updatePos(i, j);
+            grid[i][j].show();
+          }
         }
       }
     }
