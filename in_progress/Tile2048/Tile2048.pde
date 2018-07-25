@@ -32,7 +32,7 @@ void keyPressed() {
         break;
       case 40: // Down
         board.tilt(0, 0, 0,
-                   0, -1, 1);
+                   0,-1, 1);
         break;
     }
   }

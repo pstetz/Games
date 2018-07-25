@@ -47,9 +47,9 @@ class Board {
   }
   
   void tilt(int row_start, int row_end, int row_offset,
-              int col_start, int col_end, int col_offset){
-    for (int i=row_start; i < row_num+row_end; i++) {
-      for (int j=col_start; j < col_num+col_end; j++) {
+            int col_start, int col_end, int col_offset){
+    for (int i=row_start; i != row_end; i++) {
+      for (int j=col_start; j != col_end; j++) {
         if(grid[i][j] != null){
           Tile temp = grid[i][j];
           grid[i][j] = null;
@@ -67,10 +67,4 @@ class Board {
       }
     }
   }
-  
-  
-  
-  //void tiltHorizontal(int x_dir){
-    
-  //}
 }
