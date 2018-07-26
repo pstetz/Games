@@ -6,7 +6,13 @@ Author: Patrick Stetz  [(github)](https://github.com/pstetz/)
 
 - Minesweeper (Python)
 
+### In Progress
+
 - 2048 Tile (Processing)
+
+- Go (Javascript)
+
+- Chess (Chess)
 
 ### Next up
 
