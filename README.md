@@ -12,7 +12,7 @@ Author: Patrick Stetz  [(github)](https://github.com/pstetz/)
 
 - Go (Javascript)
 
-- Chess (Chess)
+- Chess (Javascript)
 
 ### Next up
 
